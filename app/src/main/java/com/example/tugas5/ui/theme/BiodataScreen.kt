@@ -20,6 +20,7 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun BiodataScreen() {
+    // State buat nampung inputan form
     var firstName by remember { mutableStateOf("") }
     var lastName by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
@@ -35,6 +36,7 @@ fun BiodataScreen() {
                 .fillMaxSize()
                 .padding(innerPadding)
         ) {
+            // Background langit malam full layar
             Image(
                 painter = painterResource(id = R.drawable.night_sky),
                 contentDescription = null,
@@ -42,6 +44,7 @@ fun BiodataScreen() {
                 contentScale = ContentScale.Crop
             )
 
+            // Konten form utama dengan scroll
             Column(
                 modifier = Modifier
                     .fillMaxSize()
@@ -50,6 +53,7 @@ fun BiodataScreen() {
             ) {
                 Spacer(modifier = Modifier.height(100.dp))
 
+                // Card putih yang ngapung di atas background
                 Card(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -78,6 +82,7 @@ fun BiodataScreen() {
                         )
                         Spacer(modifier = Modifier.height(24.dp))
 
+                        // Input Nama Depan & Belakang
                         Row(
                             modifier = Modifier.fillMaxWidth(),
                             horizontalArrangement = Arrangement.spacedBy(8.dp)
@@ -101,6 +106,7 @@ fun BiodataScreen() {
                         }
                         Spacer(modifier = Modifier.height(16.dp))
 
+                        // Input Email
                         OutlinedTextField(
                             value = email,
                             onValueChange = { email = it },
@@ -111,6 +117,7 @@ fun BiodataScreen() {
                         )
                         Spacer(modifier = Modifier.height(16.dp))
 
+                        // Input Tanggal Lahir & Experience
                         Row(
                             modifier = Modifier.fillMaxWidth(),
                             horizontalArrangement = Arrangement.spacedBy(8.dp)
@@ -148,6 +155,7 @@ fun BiodataScreen() {
                         }
                         Spacer(modifier = Modifier.height(20.dp))
 
+                        // Bagian Checkbox Skill
                         Column(modifier = Modifier.fillMaxWidth()) {
                             Text(
                                 text = stringResource(id = R.string.label_skill),
@@ -176,6 +184,25 @@ fun BiodataScreen() {
                             }
                         }
                         Spacer(modifier = Modifier.height(24.dp))
+
+                        // Tombol Proceed
+                        Button(
+                            onClick = { },
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(50.dp),
+                            shape = RoundedCornerShape(12.dp),
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor = colorResource(id = R.color.purple_text)
+                            )
+                        ) {
+                            Text(
+                                text = stringResource(id = R.string.btn_proceed),
+                                color = Color.White,
+                                fontWeight = FontWeight.Bold,
+                                fontSize = 16.sp
+                            )
+                        }
                     }
                 }
                 Spacer(modifier = Modifier.height(40.dp))
