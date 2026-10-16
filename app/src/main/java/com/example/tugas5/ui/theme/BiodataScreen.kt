@@ -9,6 +9,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
@@ -146,6 +147,35 @@ fun BiodataScreen() {
                             )
                         }
                         Spacer(modifier = Modifier.height(20.dp))
+
+                        Column(modifier = Modifier.fillMaxWidth()) {
+                            Text(
+                                text = stringResource(id = R.string.label_skill),
+                                fontWeight = FontWeight.Bold,
+                                fontSize = 14.sp,
+                                color = Color.Black
+                            )
+                            Spacer(modifier = Modifier.height(8.dp))
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                horizontalArrangement = Arrangement.SpaceBetween,
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Row(verticalAlignment = Alignment.CenterVertically) {
+                                    Checkbox(checked = isAndroidChecked, onCheckedChange = { isAndroidChecked = it })
+                                    Text(text = stringResource(id = R.string.skill_android), fontSize = 12.sp)
+                                }
+                                Row(verticalAlignment = Alignment.CenterVertically) {
+                                    Checkbox(checked = isUiUxChecked, onCheckedChange = { isUiUxChecked = it })
+                                    Text(text = stringResource(id = R.string.skill_uiux), fontSize = 12.sp)
+                                }
+                                Row(verticalAlignment = Alignment.CenterVertically) {
+                                    Checkbox(checked = isWebChecked, onCheckedChange = { isWebChecked = it })
+                                    Text(text = stringResource(id = R.string.skill_web), fontSize = 12.sp)
+                                }
+                            }
+                        }
+                        Spacer(modifier = Modifier.height(24.dp))
                     }
                 }
                 Spacer(modifier = Modifier.height(40.dp))
