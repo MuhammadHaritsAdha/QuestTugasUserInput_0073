@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Tugas5</string>
     <string name="form_title">Form Biodata</string>
+    <string name="form_subtitle">Silahkan isi biodata Anda dibawah ini !!!</string>
+    <string name="hint_first_name">Nama Depan</string>
+    <string name="hint_last_name">Nama Belakang</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_dob">Tgl Lahir</string>
+    <string name="hint_experience">Experience</string>
 </resources>
