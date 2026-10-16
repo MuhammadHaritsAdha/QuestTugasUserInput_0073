@@ -109,6 +109,43 @@ fun BiodataScreen() {
                             singleLine = true
                         )
                         Spacer(modifier = Modifier.height(16.dp))
+
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.spacedBy(8.dp)
+                        ) {
+                            OutlinedTextField(
+                                value = dob,
+                                onValueChange = { dob = it },
+                                placeholder = { Text(stringResource(id = R.string.hint_dob), fontSize = 14.sp) },
+                                trailingIcon = {
+                                    Icon(
+                                        painter = painterResource(id = android.R.drawable.ic_menu_my_calendar),
+                                        contentDescription = null,
+                                        modifier = Modifier.size(20.dp)
+                                    )
+                                },
+                                modifier = Modifier.weight(1f),
+                                shape = RoundedCornerShape(12.dp),
+                                singleLine = true
+                            )
+                            OutlinedTextField(
+                                value = experience,
+                                onValueChange = { experience = it },
+                                placeholder = { Text(stringResource(id = R.string.hint_experience), fontSize = 14.sp) },
+                                trailingIcon = {
+                                    Icon(
+                                        painter = painterResource(id = android.R.drawable.ic_input_add),
+                                        contentDescription = null,
+                                        modifier = Modifier.size(20.dp)
+                                    )
+                                },
+                                modifier = Modifier.weight(1f),
+                                shape = RoundedCornerShape(12.dp),
+                                singleLine = true
+                            )
+                        }
+                        Spacer(modifier = Modifier.height(20.dp))
                     }
                 }
                 Spacer(modifier = Modifier.height(40.dp))
