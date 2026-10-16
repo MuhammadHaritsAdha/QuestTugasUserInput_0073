@@ -1,5 +1,9 @@
 package com.example.tugas5
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 
 @Composable
-fun BiodataScreen() {}
+fun BiodataScreen() {
+    var firstName by remember { mutableStateOf("") }
+    var lastName by remember { mutableStateOf("") }
+    var email by remember { mutableStateOf("") }
+}
