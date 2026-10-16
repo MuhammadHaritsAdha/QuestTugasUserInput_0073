@@ -1,5 +1,8 @@
 package com.example.tugas5
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.ui.Modifier
 
 @Composable
 fun BiodataScreen() {
@@ -11,4 +14,8 @@ fun BiodataScreen() {
     var isAndroidChecked by remember { mutableStateOf(false) }
     var isUiUxChecked by remember { mutableStateOf(false) }
     var isWebChecked by remember { mutableStateOf(false) }
+
+    Scaffold { innerPadding ->
+        Box(modifier = Modifier.fillMaxSize().padding(innerPadding)) {}
+    }
 }
